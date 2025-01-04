@@ -4,7 +4,25 @@
   <p>Lista de nomes:</p>
   <ul>
     <li *ngFor="let name of names; index as indice">
-      {{ indice+1 }} - {{ name }}
+      {{ indice + 1 }} - {{ name }}
     </li>
   </ul>
+  <br />
+  <div class="container-table">
+    <h3>Linguagens e tecnologias</h3>
+    <table>
+      <tbody>
+        <tr>
+          <th>Sigla</th>
+          <th>Nome</th>
+          <th>Tipo</th>
+        </tr>
+        <tr *ngFor="let language of languages; index as indice">
+          <td>{{ language.sigla ? language.sigla : "--------" }}</td>
+          <td>{{ language.name }}</td>
+          <td>{{ language.type }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>

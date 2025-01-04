@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-componente05',
@@ -10,4 +10,27 @@ import { Component } from '@angular/core';
 })
 export class Componente05Component {
   names: string[] = ['Mateus', 'Beatriz', 'Denis', 'Paula'];
+
+  languages = [
+    {
+      name: 'Hyper Text Markup Language',
+      sigla: 'HTML',
+      type: 'Linguagem de Marcação',
+    },
+    {
+      sigla: 'CSS',
+      name: 'Cascating Style Sheet',
+      type: 'Linguagem de estilização',
+    },
+    {
+      name: 'JavaScript',
+      type: 'Linguagem de programação',
+      sigla: 'JS',
+    },
+    {
+      sigla: 'PhP',
+      name: 'PhP',
+      type: 'Linguagem de programaço',
+    },
+  ];
 }

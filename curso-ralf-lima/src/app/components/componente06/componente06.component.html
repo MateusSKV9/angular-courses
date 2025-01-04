@@ -1,0 +1,18 @@
+<section>
+  <h1>Componente 06</h1>
+
+  <div class="button-group">
+    <button (click)="item = 'html'">HTML</button>
+    <button (click)="item = 'css'">CSS</button>
+    <button (click)="item = 'javascript'">JavaScript</button>
+  </div>
+
+  <input [(ngModel)]="item" type="text" placeholder="Digite uma linguagem" />
+
+  <div *ngIf="item" [ngSwitch]="item | lowercase">
+    <p *ngSwitchCase="'html'">Linguagem de marcação</p>
+    <p *ngSwitchCase="'css'">Linguagem de estilização</p>
+    <p *ngSwitchCase="'javascript'">Linguagem de programação</p>
+    <p *ngSwitchDefault>Linguagem não encontrada</p>
+  </div>
+</section>
