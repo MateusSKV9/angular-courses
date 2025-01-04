@@ -1,0 +1,32 @@
+<section>
+  <h1>Componente 02</h1>
+  <p>Aqui trabalhamos com <span class="highlight">event binding</span></p>
+
+  <button (click)="showMessage()" type="button">
+    {{ message ? "Exibir" : "Ocultar" }}
+  </button>
+  <p *ngIf="message">Exibindo mensagem</p>
+
+  <input
+    (blur)="saveMessage(input.value)"
+    (keyup.enter)="saveMessage(input.value)"
+    type="text"
+    name="name"
+    id="name"
+    placeholder="Digite seu nome"
+    #input
+  />
+  <p *ngIf="valueSaveD">Nome: {{ valueSaveD | titlecase }}</p>
+
+  <br>
+
+  <p>Aqui temos o <span class="highlight">Two-data biding</span></p>
+  <input
+    [(ngModel)]="typingText"
+    type="text"
+    name="typing-text"
+    id="typing-text"
+    placeholder="Digite um texto"
+  />
+  <p *ngIf="typingText">Digitando: {{ typingText }}</p>
+</section>

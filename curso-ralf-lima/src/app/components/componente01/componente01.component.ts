@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './componente01.component.html',
   styleUrl: './componente01.component.css',
 })
-export class Componente01Component {}
+export class Componente01Component {
+  name: string = 'Mateus Santos';
+  age: number = 20;
+  role: string = 'web developer';
+  address = {
+    city: 'Jequié',
+    estate: 'Bahia',
+  };
+}
