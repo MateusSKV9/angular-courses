@@ -1,0 +1,10 @@
+<section>
+  <h1>Componente 05</h1>
+
+  <p>Lista de nomes:</p>
+  <ul>
+    <li *ngFor="let name of names; index as indice">
+      {{ indice+1 }} - {{ name }}
+    </li>
+  </ul>
+</section>

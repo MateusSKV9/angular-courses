@@ -3,7 +3,7 @@
   <p>Aqui trabalhamos com <span class="highlight">event binding</span></p>
 
   <button (click)="showMessage()" type="button">
-    {{ message ? "Exibir" : "Ocultar" }}
+    {{ message ? "Ocultar" : "Exibir" }}
   </button>
   <p *ngIf="message">Exibindo mensagem</p>
 
@@ -29,6 +29,6 @@
     placeholder="Digite um texto"
   />
   <p *ngIf="typingText">Digitando: {{ typingText }}</p>
-  
+
   <app-componente03></app-componente03>
 </section>
