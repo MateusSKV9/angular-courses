@@ -69,3 +69,48 @@ input {
 ul {
   list-style-position: inside;
 }
+
+.green, .passed {
+  color: green;
+}
+
+.red, .failed {
+  color: red;
+}
+
+.passedBg {
+  background-color: rgb(181, 255, 181);
+} 
+
+.faildBg {
+  background-color: rgb(255, 181, 181);
+  
+} 
+/* TABLE */
+
+
+table {
+  width: max-content;
+  margin-top: 10px;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+}
+
+tbody {
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+tr:nth-of-type(1) {
+  background-color: rgb(55, 138, 238);
+  color: white;
+}
+
+th,
+td {
+  padding: 10px 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+

@@ -31,9 +31,8 @@ export class Componente07Component implements OnInit {
     });
   }
 
-  search(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    const value = target.value.toLowerCase();
+  search(search: string): void {
+    const value = search.toLowerCase();
 
     this.estudents = this.AllEstudents.filter((estudent) => {
       return estudent.name && estudent.name.toLowerCase().includes(value);

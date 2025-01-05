@@ -26,11 +26,12 @@
   <br />
   <h3>Lista de Estudantes</h3>
   <input
-    (input)="search($event)"
+    (input)="search(inputSearch.value)"
+    #inputSearch
     type="text"
     name="search"
     id="search"
-    placeholder="Pesquisar"
+    placeholder="Pesquisar nome..."
   />
   <ul>
     @for (estudent of estudents; track $index) {
@@ -42,4 +43,26 @@
     <p>A lista está vazia</p>
     }
   </ul>
+
+  <table>
+    <tbody>
+      <tr>
+        <th>Nº</th>
+        <th>Nome</th>
+        <th>Semestre</th>
+        <th>Nota</th>
+        <th>Situação</th>
+      </tr>
+
+      @for (estudent of estudents; track estudent.id) {
+        <tr [ngClass]="estudent.grade >= 7 ? 'passedBg' : 'faildBg'">
+          <td>{{ estudent.id }}</td>
+          <td>{{estudent.name}}</td>
+          <td>{{estudent.semester}}</td>
+          <td>{{estudent.grade.toFixed(2)}}</td>
+          <td>{{estudent.status}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
 </section>
