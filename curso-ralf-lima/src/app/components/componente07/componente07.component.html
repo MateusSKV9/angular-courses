@@ -1,7 +1,45 @@
 <section>
   <h1>Componente 07</h1>
 
-  <p [ngStyle]="{ color: on ? 'green' : 'red' }" (mouseover)="onMouseOver()">
+  <p
+    [ngStyle]="{
+      color: on ? 'green' : 'red',
+      background: 'lightblue',
+      padding: '4px 8px'
+    }"
+    (mouseover)="onMouseOver()"
+  >
     Passe o mouse aqui
   </p>
+
+  <br />
+
+  <ul>
+    <li
+      *ngFor="let item of list"
+      [ngClass]="item == 'Aprovado' ? 'green' : 'red'"
+    >
+      {{ item }}
+    </li>
+  </ul>
+
+  <br />
+  <h3>Lista de Estudantes</h3>
+  <input
+    (input)="search($event)"
+    type="text"
+    name="search"
+    id="search"
+    placeholder="Pesquisar"
+  />
+  <ul>
+    @for (estudent of estudents; track $index) {
+    <li>
+      {{ estudent.name }} - {{ estudent.semester }} - {{ estudent.grade }} -
+      {{ estudent.status }}
+    </li>
+    } @empty {
+    <p>A lista está vazia</p>
+    }
+  </ul>
 </section>

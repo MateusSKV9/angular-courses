@@ -1,0 +1,36 @@
+{
+  "estudents": [
+    {
+      "id": "1",
+      "name": "Maria Beatriz",
+      "semester": "I semestre",
+      "age": 18,
+      "grade": 6.9,
+      "status": "Reprovado"
+    },
+    {
+      "id": "2",
+      "name": "Roberto Pereira",
+      "semester": "I semestre",
+      "age": 24,
+      "grade": 8.5,
+      "status": "Aprovado"
+    },
+    {
+      "id": "3",
+      "name": "Mateus Santos",
+      "semester": "I semestre",
+      "age": 20,
+      "grade": 9.5,
+      "status": "Aprovado"
+    },
+    {
+      "id": "4",
+      "name": "Victor Santos",
+      "semester": "I semestre",
+      "age": 21,
+      "grade": 9.0,
+      "status": "Aprovado"
+    }
+  ]
+}
