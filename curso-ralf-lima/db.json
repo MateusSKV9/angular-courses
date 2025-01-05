@@ -26,11 +26,11 @@
     },
     {
       "id": "4",
-      "name": "Victor Santos",
+      "name": "Wellington Santos",
       "semester": "I semestre",
       "age": 21,
-      "grade": 9.0,
-      "status": "Aprovado"
+      "grade": 3.2,
+      "status": "Reprovado"
     }
   ]
 }

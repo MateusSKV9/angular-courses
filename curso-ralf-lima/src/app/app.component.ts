@@ -5,11 +5,13 @@ import { Componente04Component } from "./components/componente04/componente04.co
 import { Componente05Component } from "./components/componente05/componente05.component";
 import { Componente06Component } from "./components/componente06/componente06.component";
 import { Componente07Component } from "./components/componente07/componente07.component";
+import { Componente08Component } from "./components/componente08/componente08.component";
+// import 'bootstrap/dist/js/bootstrap.min.js';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Componente01Component, Componente2Component, Componente04Component, Componente05Component, Componente06Component, Componente07Component],
+  imports: [Componente01Component, Componente2Component, Componente04Component, Componente05Component, Componente06Component, Componente07Component, Componente08Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
