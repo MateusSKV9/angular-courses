@@ -19,6 +19,7 @@ export class Componente11Component implements OnInit {
   form!: FormGroup;
   btnRegister: boolean = true;
   persons: Person[] = [];
+  personIndex: number = -1;
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -47,5 +48,39 @@ export class Componente11Component implements OnInit {
   register() {
     this.persons.push(this.form.value as Person);
     this.form.reset();
+  }
+
+  select(index: number) {
+    this.personIndex = index;
+
+    this.form.setValue({
+      name: this.persons[index].name,
+      age: this.persons[index].age,
+      city: this.persons[index].city,
+    });
+
+    this.btnRegister = false;
+  }
+
+  update() {
+    this.persons[this.personIndex] = this.form.value as Person;
+
+    this.form.reset();
+
+    this.btnRegister = true;
+  }
+
+  remove() {
+    this.persons.splice(this.personIndex, 1);
+
+    this.form.reset();
+
+    this.btnRegister = true;
+  }
+
+  cancel() {
+    this.form.reset();
+
+    this.btnRegister = true;
   }
 }

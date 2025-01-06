@@ -59,13 +59,24 @@
       />
       } @else {
       <input
+        (click)="update()"
         type="button"
         value="Editar"
         class="btn-primary"
         [disabled]="form.invalid"
       />
-      <input type="button" value="Remover" class="btn-primary" />
-      <input type="button" value="Cancelar" class="btn-primary" />
+      <input
+        (click)="remove()"
+        type="button"
+        value="Remover"
+        class="btn-primary"
+      />
+      <input
+        (click)="cancel()"
+        type="button"
+        value="Cancelar"
+        class="btn-primary"
+      />
       }
     </div>
   </form>
@@ -84,11 +95,15 @@
     <tbody>
       @for (person of persons; track $index) {
       <tr>
-        <td>{{ $index +1 }}</td>
+        <td>{{ $index + 1 }}</td>
         <td>{{ person.name }}</td>
         <td>{{ person.age }}</td>
         <td>{{ person.city }}</td>
-        <td><button class="btn-primary" type="button">Selecionar</button></td>
+        <td>
+          <button (click)="select($index)" class="btn-primary" type="button">
+            Selecionar
+          </button>
+        </td>
       </tr>
       }
     </tbody>
