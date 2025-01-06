@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +5,40 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  padding: 20px;
+header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  transition: all .2s ease;
+}
+
+nav ul li a:hover {
+  box-shadow:0px 0px 5px 5px rgba(255, 255, 255, 0.6);
 }
 
 main {
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -37,7 +65,8 @@ section h1 {
   font-weight: 600;
 }
 
-button {
+button,
+.btn-primary {
   width: max-content;
   background-color: rgb(63, 137, 247);
   color: white;
@@ -49,13 +78,26 @@ button {
   margin: 3px 0px;
 }
 
-button:hover {
+button:disabled, .btn-primary:disabled {
+  background-color: rgba(63, 137, 247, 0.7) !important;
+}
+
+.btn-primary:disabled:hover {
+  transform: none;
+  box-shadow: none;
+  cursor: no-drop;
+}
+
+
+button:hover,
+.btn-primary:hover {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   transform: scale(1.03);
   cursor: pointer;
 }
 
-button:active {
+button:active,
+.btn-primary:active {
   transform: scale(0.97);
 }
 
@@ -66,35 +108,34 @@ input {
   border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-ul, ol {
+ul,
+ol {
   list-style-position: inside;
 }
 
-.green, .passed {
+.green,
+.passed {
   color: green;
 }
 
-.red, .failed {
+.red,
+.failed {
   color: red;
 }
 
 .passedBg {
   background-color: rgb(181, 255, 181);
-} 
+}
 
 .faildBg {
   background-color: rgb(255, 181, 181);
-  
-} 
+}
 /* TABLE */
 
-
 table {
-  width: max-content;
+  width: 100%;
   margin-top: 10px;
   border-collapse: collapse;
-  display: flex;
-  flex-direction: column;
 }
 
 tbody {
@@ -102,7 +143,7 @@ tbody {
   overflow: hidden;
 }
 
-tr:nth-of-type(1) {
+thead tr {
   background-color: rgb(55, 138, 238);
   color: white;
 }
@@ -113,4 +154,3 @@ td {
   border: 1px solid black;
   text-align: center;
 }
-

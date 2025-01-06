@@ -1,0 +1,26 @@
+<section>
+  <h1>Componente 10</h1>
+
+  <p>{{ form.value.name }}</p>
+  <p>{{ form.value.city }}</p>
+
+  <form [formGroup]="form">
+    <input
+      formControlName="name"
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Digite seu nome"
+      aria-label="Digite seu nome"
+    />
+
+    <input
+      formControlName="city"
+      type="text"
+      name="city"
+      id="city"
+      placeholder="Digite sua cidade"
+      aria-label="Digite sua cidade"
+    />
+  </form>
+</section>

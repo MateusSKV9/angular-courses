@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-import { Componente01Component } from './components/componente01/componente01.component';
-import { Componente2Component } from './components/componente02/componente02.component';
-import { Componente04Component } from "./components/componente04/componente04.component";
-import { Componente05Component } from "./components/componente05/componente05.component";
-import { Componente06Component } from "./components/componente06/componente06.component";
-import { Componente07Component } from "./components/componente07/componente07.component";
-import { Componente08Component } from "./components/componente08/componente08.component";
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { ContainerComponentsComponent } from './components/container-components/container-components.component';
 // import 'bootstrap/dist/js/bootstrap.min.js';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Componente01Component, Componente2Component, Componente04Component, Componente05Component, Componente06Component, Componente07Component, Componente08Component],
+  imports: [RouterModule, ContainerComponentsComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

@@ -1,0 +1,96 @@
+<section>
+  <h1>Componente 11</h1>
+
+  <form [formGroup]="form">
+    <div class="container-inputs">
+      <!-- NAME -->
+      @if (name.hasError('required') && name.touched) {
+      <p class="error">O campo nome é obrigatório!</p>
+      } @if (name.hasError('minlength') && name.touched) {
+      <p class="error">O nome precisa ter no mímino 3 caracteres!</p>
+      }
+      <input
+        formControlName="name"
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Nome"
+      />
+
+      <!-- AGE -->
+      @if (age.hasError('required') && age.touched) {
+      <p class="error">O campo idade é obrigatório!</p>
+      } @if (age.hasError('min') && age.touched) {
+      <p class="error">A idade não pode ser menor que 0!</p>
+      } @if (age.hasError('max') && age.touched) {
+      <p class="error">A idade não pode ser maior que 120!</p>
+      }
+      <input
+        formControlName="age"
+        type="number"
+        name="age"
+        id="age"
+        placeholder="Idade"
+      />
+
+      <!-- CITY -->
+      @if (city.hasError('required') && city.touched) {
+      <p class="error">O campo cidade é obrigatório!</p>
+      } @if (city.hasError('minlength') && city.touched) {
+      <p class="error">A cidade precisa ter no mímino 3 caracteres!</p>
+      }
+      <input
+        formControlName="city"
+        type="text"
+        name="city"
+        id="city"
+        placeholder="Cidade"
+      />
+    </div>
+
+    <div class="container-buttons">
+      @if(btnRegister) {
+      <input
+        (click)="register()"
+        type="button"
+        value="Cadastrar"
+        class="btn-primary"
+        [disabled]="form.invalid"
+      />
+      } @else {
+      <input
+        type="button"
+        value="Editar"
+        class="btn-primary"
+        [disabled]="form.invalid"
+      />
+      <input type="button" value="Remover" class="btn-primary" />
+      <input type="button" value="Cancelar" class="btn-primary" />
+      }
+    </div>
+  </form>
+
+  <table id="table-form">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Cidade</th>
+        <th>Selecionar</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (person of persons; track $index) {
+      <tr>
+        <td>{{ $index +1 }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.city }}</td>
+        <td><button class="btn-primary" type="button">Selecionar</button></td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</section>

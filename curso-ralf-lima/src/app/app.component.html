@@ -1,10 +1,13 @@
-<h1>Curso Ralf Lima</h1>
+<header>
+  <h1>Curso Ralf Lima</h1>
+
+  <nav>
+    <ul>
+      <li><a routerLink="/">Componentes</a></li>
+      <li><a routerLink="/form">Formulário</a></li>
+    </ul>
+  </nav>
+</header>
 <main>
-  <app-componente01></app-componente01>
-  <app-componente02></app-componente02>
-  <app-componente04></app-componente04>
-  <app-componente05></app-componente05>
-  <app-componente06></app-componente06>
-  <app-componente07></app-componente07>
-  <app-componente08></app-componente08>
+  <router-outlet></router-outlet>
 </main>
