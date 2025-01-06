@@ -4,11 +4,13 @@ import { HomeComponent } from "./pages/home/home.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { CommonModule } from '@angular/common';
+import { BaseUiComponent } from "./components/base-ui/base-ui.component";
+import { UsersComponent } from "./components/users/users.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent, NavbarComponent, FooterComponent, CommonModule],
+  imports: [HomeComponent, NavbarComponent, FooterComponent, CommonModule, BaseUiComponent, UsersComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

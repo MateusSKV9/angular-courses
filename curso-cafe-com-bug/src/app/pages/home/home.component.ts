@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, DoCheck, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +7,18 @@ import { Component, OnDestroy } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnDestroy {
-  ngOnDestroy(): void {
-    alert('Destruiu');
+export class HomeComponent implements DoCheck {
+  // ngOnDestroy(): void {
+  //   alert('Destruiu');
+  // }
+
+  num: number = 0;
+
+  ngDoCheck(): void {
+    console.log('Mudou');
+  }
+
+  adiciona1() {
+    this.num++;
   }
 }

@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 <main>
-  <app-home [hidden]="!exibeHome"></app-home>
-  <button (click)="destruir()" class="btn btn-primary" type="button">Destruir</button>
+  <app-base-ui>
+    <app-users></app-users>
+  </app-base-ui>
 </main>
 <app-footer></app-footer>

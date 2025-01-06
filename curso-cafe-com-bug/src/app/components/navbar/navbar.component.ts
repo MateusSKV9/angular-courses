@@ -9,6 +9,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   ngOnInit(): void {
-    alert("Navbar iniciou");
+    console.log('Navbar iniciou');
   }
 }

@@ -24,3 +24,7 @@ section {
   border-radius: 7px;
   gap: 10px;
 }
+
+button {
+  width: max-content ;
+}
