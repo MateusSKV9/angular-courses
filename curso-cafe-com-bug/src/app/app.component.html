@@ -1,4 +1,6 @@
-<h1>Curso Cafe com Bug</h1>
+<app-navbar></app-navbar>
 <main>
-  <app-home></app-home>
+  <app-home [hidden]="!exibeHome"></app-home>
+  <button (click)="destruir()" class="btn btn-primary" type="button">Destruir</button>
 </main>
+<app-footer></app-footer>

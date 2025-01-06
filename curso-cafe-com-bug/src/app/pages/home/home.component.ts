@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
-import { ExemploComponentComponent } from "../../components/exemplo-component/exemplo-component.component";
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ExemploComponentComponent],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent implements OnDestroy {
+  ngOnDestroy(): void {
+    alert('Destruiu');
+  }
+}
