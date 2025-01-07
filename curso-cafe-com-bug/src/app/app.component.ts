@@ -15,7 +15,8 @@ import { UsersComponent } from './components/users/users.component';
     FooterComponent,
     CommonModule,
     BaseUiComponent,
-    RouterOutlet
+    RouterOutlet,
+    UsersComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

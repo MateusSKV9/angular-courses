@@ -1,23 +1,13 @@
-<section>
-  <h5>Lista de nomes:</h5>
-  <ul>
-    <li *ngFor="let user of users">
-      <!-- <button
-        routerLink="/users/{{ user }}"
-        class="btn btn-primary"
-        type="button"
-      >
-        {{ user }}
-      </button> -->
-      
-      <button
-        routerLink="/users/details"
-        [queryParams]="{ username: user }"
-        class="btn btn-primary"
-        type="button"
-      >
-        {{ user }}
-      </button>
-    </li>
-  </ul>
-</section>
+<div class="row">
+  <app-user-card
+    (userInfoEmitter)="infoUserSelecionado($event)"
+    *ngFor="let user of users"
+    [user]="user"
+    class="col-md"
+  ></app-user-card>
+</div>
+<div *ngIf="userSelecionado" class="mt-3 border col-md p-3">
+  <h2>Usuário selecionado</h2>
+  <p>{{ userSelecionado.nome }}</p>
+  <p>{{ userSelecionado.idade }}</p>
+</div>
