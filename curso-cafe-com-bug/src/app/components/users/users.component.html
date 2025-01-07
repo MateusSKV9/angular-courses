@@ -1,5 +1,14 @@
 <section>
+  <h5>Lista de nomes:</h5>
   <ul>
-    <li *ngFor="let user of users">{{ user }}</li>
+    <li *ngFor="let user of users">
+      <button
+        routerLink="/users/{{ user }}"
+        class="btn btn-primary"
+        type="button"
+      >
+        {{ user }}
+      </button>
+    </li>
   </ul>
 </section>

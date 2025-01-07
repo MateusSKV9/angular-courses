@@ -1,0 +1,12 @@
+h5 {
+  margin-bottom: -7px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+
+  display: flex;
+  gap: 5px;
+}
+
