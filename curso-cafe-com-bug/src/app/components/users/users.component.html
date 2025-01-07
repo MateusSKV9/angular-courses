@@ -2,8 +2,17 @@
   <h5>Lista de nomes:</h5>
   <ul>
     <li *ngFor="let user of users">
-      <button
+      <!-- <button
         routerLink="/users/{{ user }}"
+        class="btn btn-primary"
+        type="button"
+      >
+        {{ user }}
+      </button> -->
+      
+      <button
+        routerLink="/users/details"
+        [queryParams]="{ username: user }"
         class="btn btn-primary"
         type="button"
       >
