@@ -1,0 +1,5 @@
+.container-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}

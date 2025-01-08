@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, DoCheck, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -12,6 +13,7 @@ export class HomeComponent implements DoCheck {
   //   alert('Destruiu');
   // }
 
+  checked: boolean = false;
   num: number = 0;
 
   ngDoCheck(): void {
@@ -20,5 +22,16 @@ export class HomeComponent implements DoCheck {
 
   adiciona1() {
     this.num++;
+
+    this.checked = false;
+  }
+
+  remover1() {
+    if (this.num == 0) {
+      this.checked = true;
+      return;
+    }
+
+    this.num--;
   }
 }

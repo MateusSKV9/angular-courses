@@ -1,3 +1,29 @@
+<form class="mb-3" [formGroup]="userForm">
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="nome">Nome</label>
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        class="form-control"
+        formControlName="nome"
+      />
+    </div>
+    <div class="form-group col-md-3">
+      <label for="idade">Idade</label>
+      <input
+        type="number"
+        name="idade"
+        id="idade"
+        class="form-control"
+        formControlName="idade"
+      />
+    </div>
+  </div>
+  <button (click)="submitForm()" class="btn btn-success mt-3" type="button">Incluir</button>
+</form>
+
 <div class="row">
   <app-user-card
     (userInfoEmitter)="infoUserSelecionado($event)"

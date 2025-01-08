@@ -2,5 +2,21 @@
   <h2>Página Home</h2>
   <p>{{ num }}</p>
 
-  <button class="btn btn-success" (click)="adiciona1()" type="button">Adicionar</button>
+  <div class="container-buttons">
+    <button class="btn btn-success" (click)="adiciona1()" type="button">
+      Adicionar
+    </button>
+
+    <button
+      class="btn btn-primary"
+      type="button"
+      (click)="remover1()"
+      [disabled]="num >= 0 ? false : true"
+      #btnRemove
+    >
+      Retirar
+    </button>
+  </div>
+
+  <p *ngIf="checked">O valor não pode ser menor que 0</p>
 </section>
