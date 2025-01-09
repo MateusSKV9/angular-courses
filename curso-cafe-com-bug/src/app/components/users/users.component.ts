@@ -9,6 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-users',
@@ -21,7 +22,7 @@ export class UsersComponent implements OnInit {
   userSelecionado!: User;
   userForm: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private userService: UserService) {}
 
   ngOnInit(): void {
     this.initializeForm();
@@ -29,13 +30,7 @@ export class UsersComponent implements OnInit {
 
   initializeForm() {
     this.userForm = this.fb.group({
-      nome: [
-        '',
-        [
-          Validators.required,
-          Validators.maxLength(200),
-        ],
-      ],
+      nome: ['', [Validators.required, Validators.maxLength(200)]],
       idade: [
         '',
         [Validators.required, Validators.min(18), Validators.max(120)],
@@ -52,6 +47,7 @@ export class UsersComponent implements OnInit {
 
   infoUserSelecionado(user: User) {
     this.userSelecionado = user;
+    this.userService.setUser(user);
   }
 
   submitForm() {

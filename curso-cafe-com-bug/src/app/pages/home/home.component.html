@@ -1,6 +1,39 @@
 <section>
   <h2>Página Home</h2>
-  <p>{{ num }}</p>
+
+  <div class="container" *ngIf="userGit">
+    <div class="row justify-content-center">
+      <div class="card col-md-3 pt-3 text-center">
+        <img class="col-md" [src]="userGit.avatar_url" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">{{ userGit.name }}</h5>
+          <p class="card-text">Username: {{ "@" + userGit.login }}</p>
+          <div class="text-center row mb-3">
+            <div class="col-md">
+              <p class="m-0"><strong>Seguidores:</strong></p>
+              <p class="card-text col-md">{{ userGit.followers }}</p>
+            </div>
+
+            <div class="col-md">
+              <p class="m-0"><strong>Seguindo:</strong></p>
+              <p class="card-text col-md">{{ userGit.following }}</p>
+            </div>
+          </div>
+          <a class="btn btn-primary" [href]="userGit.html_url"
+            target="_blank" >Visitar perfil</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div *ngIf="user" class="mt-3 border col-md p-3">
+    <h2>Usuário selecionado</h2>
+    <p>{{ user.nome }}</p>
+    <p>{{ user.idade }}</p>
+  </div> -->
+
+  <!-- <p>{{ num }}</p>
 
   <div class="container-buttons">
     <button class="btn btn-success" (click)="adiciona1()" type="button">
@@ -16,7 +49,6 @@
     >
       Retirar
     </button>
-  </div>
-
-  <p *ngIf="checked">O valor não pode ser menor que 0</p>
+  </div> -->
+  <!-- <p *ngIf="checked">O valor não pode ser menor que 0</p> -->
 </section>
