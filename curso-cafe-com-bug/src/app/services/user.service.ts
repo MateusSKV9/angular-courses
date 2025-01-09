@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../interfaces/User';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { UserGit } from '../interfaces/UserGit';
 
 @Injectable({
@@ -14,12 +14,16 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getGitUser(username: string) {
-    return this.http.get<UserGit>(this.baseUrl + 'users/' + username).pipe(
-      map((response: UserGit) => {
-        return response;
-      })
-    );
+  // getGitUser(username: string) {
+  //   return this.http.get<UserGit>(this.baseUrl + 'users/' + username).pipe(
+  //     map((response: UserGit) => {
+  //       return response;
+  //     })
+  //   );
+  // }
+
+  getGitUser(username: string): Observable<UserGit> {
+    return this.http.get<UserGit>(this.baseUrl + 'users/'+username);
   }
 
   setUser(user: User) {

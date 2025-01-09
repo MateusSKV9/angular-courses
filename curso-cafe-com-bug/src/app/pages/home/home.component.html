@@ -1,9 +1,25 @@
 <section>
   <h2>Página Home</h2>
 
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="input-group mb-3">
+        <input
+          [(ngModel)]="username"
+          type="text"
+          class="form-control"
+          placeholder="Busque por um username"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <button (click)="getGitUser()" class="btn btn-success" type="button">Pesquisar</button>
+      </div>
+    </div>
+  </div>
+
   <div class="container" *ngIf="userGit">
     <div class="row justify-content-center">
-      <div class="card col-md-3 pt-3 text-center">
+      <div class="card col-md-4 pt-3 text-center">
         <img class="col-md" [src]="userGit.avatar_url" alt="" />
         <div class="card-body">
           <h5 class="card-title">{{ userGit.name }}</h5>
@@ -19,8 +35,8 @@
               <p class="card-text col-md">{{ userGit.following }}</p>
             </div>
           </div>
-          <a class="btn btn-primary" [href]="userGit.html_url"
-            target="_blank" >Visitar perfil</a
+          <a class="btn btn-primary" [href]="userGit.html_url" target="_blank"
+            >Visitar perfil</a
           >
         </div>
       </div>
