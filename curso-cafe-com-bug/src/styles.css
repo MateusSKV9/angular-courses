@@ -28,3 +28,7 @@ section {
 button {
   width: max-content ;
 }
+
+button:disabled {
+  background-color: rgba(255, 0, 0, 0.7) !important;
+}

@@ -29,7 +29,13 @@ export class UsersComponent implements OnInit {
 
   initializeForm() {
     this.userForm = this.fb.group({
-      nome: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
+      nome: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(200),
+        ],
+      ],
       idade: [
         '',
         [Validators.required, Validators.min(18), Validators.max(120)],
@@ -51,8 +57,18 @@ export class UsersComponent implements OnInit {
   submitForm() {
     if (this.userForm.valid) {
       console.log(this.userForm.value);
+      this.users.push(this.userForm.value as User);
+      this.userForm.reset();
     } else {
       console.log('Formulário inválido');
     }
+  }
+
+  get nome() {
+    return this.userForm.get('nome')!;
+  }
+
+  get idade() {
+    return this.userForm.get('idade')!;
   }
 }
