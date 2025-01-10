@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { BaseUiComponent } from './components/base-ui/base-ui.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserService } from './services/user.service';
+import { NgxSpinner, NgxSpinnerComponent } from 'ngx-spinner';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +19,7 @@ import { UserService } from './services/user.service';
     CommonModule,
     BaseUiComponent,
     RouterOutlet,
+    NgxSpinnerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

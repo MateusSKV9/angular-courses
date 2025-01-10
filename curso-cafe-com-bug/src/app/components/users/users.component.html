@@ -27,6 +27,7 @@
         [class.is-invalid]="idade.errors && idade.touched"
         formControlName="idade"
       />
+      
       <div *ngIf="idade.hasError('required')" class="invalid-feedback">
         <span>O campo idade é obrigatório</span>
       </div>

@@ -11,8 +11,13 @@
           placeholder="Busque por um username"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
+          #input
         />
         <button (click)="getGitUser()" class="btn btn-success" type="button">Pesquisar</button>
+      </div>
+
+      <div *ngIf="show" class="alert alert-danger">
+        <p >Usuário não encontrado</p>
       </div>
     </div>
   </div>
