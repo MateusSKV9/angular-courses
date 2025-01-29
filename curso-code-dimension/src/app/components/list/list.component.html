@@ -1,7 +1,7 @@
 <p>Produtos:</p>
 
-<ul>
-  @for (product of products; track $index) {
-  <li>{{ product.id }} - {{ product.title }}</li>
+<div class="container-cards">
+  @for (product of products; track product.id) {
+    <app-card [product]="product"></app-card>
   }
-</ul>
+</div>
