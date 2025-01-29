@@ -1,0 +1,15 @@
+.card {
+  background-color: rgb(24, 23, 23);
+  color: white;
+  padding: 10px;
+  border-radius: 7px;
+  width: 200px;
+}
+
+.card button {
+  padding: 5px 10px;
+}
+
+.card button:first-of-type {
+  margin-right: 5px;
+}
