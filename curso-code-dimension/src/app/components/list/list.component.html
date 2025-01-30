@@ -1,7 +1,12 @@
-<p>Produtos:</p>
+<div class="container-btns">
+  <a class="btn-default-link" routerLink="/create-product">Criar produto</a>
+</div>
 
+<p>Produtos:</p>
 <div class="container-cards">
   @for (product of products; track product.id) {
-    <app-card [product]="product"></app-card>
+  <app-card [product]="product"></app-card>
+  } @empty {
+  <p>Lista está vazia</p>
   }
 </div>

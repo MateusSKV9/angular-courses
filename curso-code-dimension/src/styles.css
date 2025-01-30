@@ -23,3 +23,15 @@ body {
   width: 100%;
   max-width: 748px;
 }
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+.btn-default-link {
+  background-color: rgb(24, 23, 23);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
