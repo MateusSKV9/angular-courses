@@ -4,8 +4,11 @@
 
 <p>Produtos:</p>
 <div class="container-cards">
-  @for (product of products; track product.id) {
-  <app-card [product]="product"></app-card>
+  @for (product of products(); track product.id) {
+  <app-card
+    [product]="product"
+    (productDeleted)="onProductDeleted($event)"
+  ></app-card>
   } @empty {
   <p>Lista está vazia</p>
   }

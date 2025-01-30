@@ -1,6 +1,6 @@
 .container-cards {
   display: flex;
-
+  flex-wrap: wrap;
   gap: 10px;
   width: 100%;
 }
