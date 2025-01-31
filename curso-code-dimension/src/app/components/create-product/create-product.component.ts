@@ -8,6 +8,7 @@ import {
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../interfaces/Product';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-product',
@@ -22,7 +23,8 @@ export class CreateProductComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private productService: ProductsService,
-    private router: Router
+    private router: Router,
+    private snackSevice: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -40,8 +42,8 @@ export class CreateProductComponent implements OnInit {
 
     this.productService.createProduct(product).subscribe({
       next: (res) => {
-        console.log('Criado: ', res);
-        this.router.navigate(['']);
+        this.snackSevice.open('Produto adicionado! ✅', 'Ok');
+        this.router.navigate(['/']);
       },
       error: (err) => console.log('Erro: ', err),
     });
