@@ -1,6 +1,12 @@
 <div class="card">
   <h2>{{ product().title }}</h2>
-  <button class="button-default" type="button">Editar</button>
+  <button
+    [routerLink]="['/edit-product/', product().id]"
+    class="button-default"
+    type="button"
+  >
+    Editar
+  </button>
   <button
     (click)="deleteProduct(product().id!)"
     class="button-default"
