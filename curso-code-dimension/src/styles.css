@@ -35,7 +35,7 @@ a {
 .btn-default-link {
   background-color: rgb(24, 23, 23);
   color: white;
-  padding: 8px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   transition: all 0.2s ease;
 }
@@ -53,12 +53,12 @@ a {
   padding: 10px;
 }
 
-.button-default:hover {
+.button-default:enabled:hover {
   cursor: pointer;
   background-color: rgb(0, 140, 255);
   color: white;
 }
 
-.button-default:active {
+.button-default:enabled:active {
   transform: scale(0.98);
 }
