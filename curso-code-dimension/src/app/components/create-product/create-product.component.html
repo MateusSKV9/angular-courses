@@ -1,17 +1,1 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
-  <div class="form-group">
-    <label for="title">Título</label>
-    <input
-      formControlName="title"
-      type="text"
-      name="title"
-      id="title"
-      placeholder="Título"
-      [class.input-highlight]="form.invalid && form.get('title')?.touched"
-    />
-  </div>
-
-  <button [disabled]="form.invalid" class="button-default" type="submit">
-    Salvar
-  </button>
-</form>
+<app-form (done)="onSubmit($event)"></app-form>

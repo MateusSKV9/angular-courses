@@ -10,6 +10,9 @@ export const routes: Routes = [
       import('./components/create-product/create-product.component').then(
         (m) => m.CreateProductComponent
       ),
+    data: {
+      forEdit: false,
+    },
   },
   {
     path: 'edit-product/:id',
@@ -17,5 +20,8 @@ export const routes: Routes = [
       import('./components/edit-product/edit-product.component').then(
         (m) => m.EditProductComponent
       ),
+    data: {
+      forEdit: true,
+    },
   },
 ];
