@@ -2,14 +2,20 @@
   <a class="btn-default-link" routerLink="/create-product">Criar produto</a>
 </div>
 
-<p>Produtos:</p>
+<h2>Produtos</h2>
 <div class="container-cards">
   @for (product of products(); track product.id) {
-  <app-card
-    [product]="product"
-    (productDeleted)="onProductDeleted(product)"
-  ></app-card>
-  } @empty {
-  <p>Lista está vazia</p>
+    @defer (on immediate) {
+      <app-card
+        [product]="product"
+        (productDeleted)="onProductDeleted(product)"
+      ></app-card>
+    } 
+  } 
+  
+  @empty {
+    @defer (on immediate) {
+      <app-no-items></app-no-items>
+    }
   }
 </div>
