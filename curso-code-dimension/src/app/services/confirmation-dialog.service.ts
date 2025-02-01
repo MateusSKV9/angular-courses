@@ -33,10 +33,9 @@ import { Observable } from 'rxjs';
   imports: [
     MatButtonModule,
     MatDialogActions,
-    MatDialogClose,
     MatDialogTitle,
-    MatDialogContent,
-  ],
+    MatDialogContent
+],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfirmationDialogComponent {
