@@ -12,17 +12,11 @@ import { RouterModule } from '@angular/router';
 })
 export class CardComponent {
   product = input.required<Product>();
-  productDeleted = output<string>();
+  productDeleted = output();
 
   constructor(private productService: ProductsService) {}
 
-  deleteProduct(id: string) {
-    this.productService.deleteProduct(id).subscribe({
-      next: (res) => {
-        console.log('Deletado', res);
-        this.productDeleted.emit(id);
-      },
-      error: (err) => console.log('Error: ', err),
-    });
+  deleteProduct() {
+    this.productDeleted.emit();
   }
 }

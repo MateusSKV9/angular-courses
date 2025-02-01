@@ -79,9 +79,17 @@ export class ListComponent implements OnInit {
     });
   }
 
-  onProductDeleted(productId: string) {
-    this.products.update((products) =>
-      products.filter((p) => p.id !== productId)
-    );
+  onProductDeleted(product: Product) {
+    this.matDialog
+      .open(ConfirmationDialogComponent)
+      .afterClosed()
+      .pipe(filter((answer) => answer === true))
+      .subscribe(() => {
+        this.productsservice.deleteProduct(product.id!).subscribe(() => {
+          this.products.update((products) =>
+            products.filter((p) => p !== product)
+          );
+        });
+      });
   }
 }
