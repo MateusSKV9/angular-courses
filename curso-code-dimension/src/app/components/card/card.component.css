@@ -1,9 +1,13 @@
+:host {
+  width: 100%;
+  min-width: 400px;
+}
+
 .card {
   background-color: rgb(24, 23, 23);
   color: white;
   padding: 10px;
   border-radius: 7px;
-  width: 200px;
 }
 
 .card button {

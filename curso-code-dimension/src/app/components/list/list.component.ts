@@ -3,14 +3,14 @@ import { ProductsService } from '../../services/products.service';
 import { Product } from '../../interfaces/Product';
 import { CardComponent } from '../card/card.component';
 import { RouterModule } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
 import { filter } from 'rxjs';
 import { ConfirmationDialogService } from '../../services/confirmation-dialog.service';
+import { NoItemsComponent } from "../no-items/no-items.component";
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent, RouterModule],
+  imports: [CardComponent, RouterModule, NoItemsComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
 })
@@ -19,7 +19,6 @@ export class ListComponent implements OnInit {
 
   constructor(
     private productsservice: ProductsService,
-    private matDialog: MatDialog,
     private dialogService: ConfirmationDialogService
   ) {}
 
