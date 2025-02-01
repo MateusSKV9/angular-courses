@@ -1,6 +1,6 @@
 # Cursos de Angular
 
-Este repositório contém os principais cursos de Angular realizados.
+Este repositório contém os principais cursos de Angular realizados a fim de construir uma base sólida no framework.
 
 ## 📋 Lista de cursos
 | Status | Nº    | Curso | Repositório |
