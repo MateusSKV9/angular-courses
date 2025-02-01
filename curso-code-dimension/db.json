@@ -1,3 +1,8 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "1304",
+      "title": "Produto"
+    }
+  ]
 }

@@ -1,12 +1,12 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
   <div class="form-group">
-    <label for="title">Título</label>
+    <label for="title">Produto</label>
     <input
       formControlName="title"
       type="text"
       name="title"
       id="title"
-      placeholder="Título"
+      placeholder="Nome"
       [class.input-highlight]="form.invalid && form.get('title')?.touched"
     />
   </div>

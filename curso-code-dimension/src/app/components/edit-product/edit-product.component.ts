@@ -5,11 +5,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { FormComponent } from '../../shared/form/form.component';
+import { BackToListComponent } from "../../shared/back-to-list/back-to-list.component";
 
 @Component({
   selector: 'app-edit-product',
   standalone: true,
-  imports: [ReactiveFormsModule, FormComponent],
+  imports: [ReactiveFormsModule, FormComponent, BackToListComponent],
   templateUrl: './edit-product.component.html',
   styleUrl: './edit-product.component.css',
 })
