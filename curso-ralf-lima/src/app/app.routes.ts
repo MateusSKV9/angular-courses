@@ -3,6 +3,6 @@ import { ContainerComponentsComponent } from './components/container-components/
 import { Componente11Component } from './components/componente11/componente11.component';
 
 export const routes: Routes = [
-  { path: '', component: ContainerComponentsComponent },
-  { path: 'form', component: Componente11Component },
+  { path: '', component: Componente11Component },
+  { path: 'components', component: ContainerComponentsComponent },
 ];
