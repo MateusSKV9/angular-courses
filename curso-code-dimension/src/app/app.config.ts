@@ -7,11 +7,16 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
   MatSnackBarConfig,
 } from '@angular/material/snack-bar';
+import { LoadingInterceptor } from './interceptors/interceptor.loading';
 
 const SNACK_BAR_CONFIG: ValueProvider = {
   provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
@@ -29,5 +34,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(),
     SNACK_BAR_CONFIG,
+    provideHttpClient(withInterceptorsFromDi()), // Habilita injeção de interceptors
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
 };
