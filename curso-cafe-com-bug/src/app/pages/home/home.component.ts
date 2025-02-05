@@ -1,12 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
-import { User } from '../../interfaces/User';
+import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { UsersComponent } from '../../components/users/users.component';
 import { UserGit } from '../../interfaces/UserGit';
 import { FormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -22,16 +19,12 @@ export class HomeComponent {
 
   constructor(
     private userService: UserService,
-    private toastr: ToastrService,
-    private spinner: NgxSpinnerService
+    private toastr: ToastrService
   ) {}
 
   getGitUser() {
-    this.spinner.show();
-
     this.userService.getGitUser(this.username).subscribe({
       next: (response: UserGit) => {
-        this.spinner.hide();
         this.toastr.success('Usuário encontrado', 'Sucesso', {
           timeOut: 1500,
         });
@@ -44,7 +37,6 @@ export class HomeComponent {
           timeOut: 1500,
         });
         this.show = true;
-        this.spinner.hide();
       },
     });
   }
