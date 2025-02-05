@@ -2,20 +2,23 @@
   <a class="btn-default-link" routerLink="/create-product">Criar produto</a>
 </div>
 
-<h2>Produtos</h2>
-<div class="container-cards">
-  @for (product of products(); track product.id) {
-    @defer (on immediate) {
-      <app-card
-        [product]="product"
-        (productDeleted)="onProductDeleted(product)"
-      ></app-card>
+@if (!isLoading()) {
+  <div class="container-cards">
+    <h2>Produtos</h2>
+    @for (product of products(); track product.id) {
+      @defer (on immediate) {
+        <app-card
+          [product]="product"
+          (productDeleted)="onProductDeleted(product)"
+        ></app-card>
+      } 
     } 
-  } 
-  
-  @empty {
-    @defer (on immediate) {
-      <app-no-items></app-no-items>
+    
+    @empty {
+      @defer (on immediate) {
+        <app-no-items></app-no-items>
+      }
     }
+  </div>
   }
-</div>
+

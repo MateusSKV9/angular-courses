@@ -5,7 +5,7 @@ import { CardComponent } from '../card/card.component';
 import { RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 import { ConfirmationDialogService } from '../../services/confirmation-dialog.service';
-import { NoItemsComponent } from "../no-items/no-items.component";
+import { NoItemsComponent } from '../no-items/no-items.component';
 
 @Component({
   selector: 'app-list',
@@ -16,6 +16,7 @@ import { NoItemsComponent } from "../no-items/no-items.component";
 })
 export class ListComponent implements OnInit {
   products = signal<Product[]>([]);
+  isLoading = signal<boolean>(true);
 
   constructor(
     private productsservice: ProductsService,
@@ -25,6 +26,7 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.productsservice.getAllProducts().subscribe((products) => {
       this.products.set(products);
+      this.isLoading.set(false);
     });
   }
 
