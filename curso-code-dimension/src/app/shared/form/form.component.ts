@@ -33,7 +33,7 @@ export class FormComponent {
     const forEdit = this.route.snapshot.data['forEdit'];
 
     this.form = this.fb.group({
-      title: ['', [Validators.required]],
+      name: ['', [Validators.required]],
     });
 
     if (forEdit) {
@@ -43,7 +43,7 @@ export class FormComponent {
         this.product = product;
 
         this.form.setValue({
-          title: this.product!.title,
+          name: this.product!.name,
         });
       });
     }
@@ -52,7 +52,7 @@ export class FormComponent {
   onSubmit() {
     const formValue = this.form.value;
     const product: Product = {
-      title: formValue.title,
+      name: formValue.name,
     };
 
     this.done.emit(product);

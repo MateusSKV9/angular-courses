@@ -2,12 +2,12 @@
   <div class="form-group">
     <label for="title">Produto</label>
     <input
-      formControlName="title"
+      formControlName="name"
       type="text"
-      name="title"
-      id="title"
+      name="name"
+      id="name"
       placeholder="Nome"
-      [class.input-highlight]="form.invalid && form.get('title')?.touched"
+      [class.input-highlight]="form.invalid && form.get('name')?.touched"
     />
   </div>
 
