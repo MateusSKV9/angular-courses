@@ -1,8 +1,9 @@
 # Cursos de Angular
+<div align="center">
+  <img  width="400px" src="preview-removebg-preview.png" alt="Logo Angular">
+</div>
 
-Este repositório contém os principais cursos de Angular realizados a fim de construir uma base sólida no framework.
-
-<img src="preview-removebg-preview.png" alt="Logo Angular">
+<p>Este repositório contém os principais cursos de Angular realizados a fim de construir uma base sólida no framework.</p>
 
 ## 📋 Lista de cursos
 | Status | Nº    | Curso | Repositório | Deploy |
