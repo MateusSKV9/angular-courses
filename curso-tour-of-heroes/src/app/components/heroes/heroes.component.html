@@ -1,0 +1,21 @@
+<h2>My Heroes</h2>
+<ul>
+  @for (hero of heroes; track hero.id) {
+  <li [class.selected]="hero === selectedHero" (click)="onSelectHero(hero)">
+    {{ hero.id }} - {{ hero.name }}
+  </li>
+  }
+</ul>
+
+@if (selectedHero) {
+<div class="hero-details">
+  <h3>{{ selectedHero.name | uppercase }} Details:</h3>
+  <p>Hero: {{ selectedHero.id }} - {{ selectedHero.name }}</p>
+
+  <div>
+    <label for="name">Hero name:</label>
+    <input [(ngModel)]="selectedHero.name" type="text" name="name" id="name" />
+  </div>
+</div>
+
+}
