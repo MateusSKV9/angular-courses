@@ -6,13 +6,13 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 })
 export class MessageService {
   private messages = new BehaviorSubject<string[]>([]);
-  messages$ = this.messages.asObservable(); // Expondo como Observable
+  messages$ = this.messages.asObservable(); 
 
   addMessage(message: string): void {
-    this.messages.next([...this.messages.value, message]); // Atualiza array
+    this.messages.next([...this.messages.value, message]); 
   }
 
   clearMessage(): void {
-    this.messages.next([]); // Emite um novo array vazio
+    this.messages.next([]);
   }
 }

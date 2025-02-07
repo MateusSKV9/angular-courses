@@ -1,6 +1,16 @@
 <mat-toolbar color="primary">
   <span>Curso Tour of Heroes</span>
+  <span class="example-spacer"></span>
+  <button
+    routerLink="/heroes"
+    matTooltip="Heroes"
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Heroes list"
+  >
+    <mat-icon>sports_martial_arts</mat-icon>
+  </button>
 </mat-toolbar>
 
-<app-heroes></app-heroes>
+<router-outlet></router-outlet>
 <app-messages></app-messages>
