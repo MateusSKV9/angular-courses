@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MessagesComponent } from './components/messages/messages.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     RouterModule,
     MatTooltipModule,
-  ],
+    DashboardComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
