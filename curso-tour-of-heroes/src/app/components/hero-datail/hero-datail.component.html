@@ -1,11 +1,11 @@
-@if (hero()) {
-<div class="hero()-details">
-  <h3>{{ hero().name | uppercase }} Details:</h3>
-  <p>hero(): {{ hero().id }} - {{ hero().name }}</p>
+<div class="hero-details">
+  <h2>{{ hero.name | uppercase }} Details:</h2>
+  <p>hero: {{ hero.id }} - {{ hero.name }}</p>
 
   <div>
-    <label for="name">hero() name:</label>
-    <input [(ngModel)]="hero().name" type="text" name="name" id="name" />
+    <label for="name">hero name:</label>
+    <input [(ngModel)]="hero.name" type="text" name="name" id="name" />
   </div>
+
+  <button mat-flat-button (click)="goBack()" type="button">Go back</button>
 </div>
-}
