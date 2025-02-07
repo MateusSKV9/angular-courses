@@ -7,15 +7,4 @@
   }
 </ul>
 
-@if (selectedHero) {
-<div class="hero-details">
-  <h3>{{ selectedHero.name | uppercase }} Details:</h3>
-  <p>Hero: {{ selectedHero.id }} - {{ selectedHero.name }}</p>
-
-  <div>
-    <label for="name">Hero name:</label>
-    <input [(ngModel)]="selectedHero.name" type="text" name="name" id="name" />
-  </div>
-</div>
-
-}
+<app-hero-datail [hero]="selectedHero"></app-hero-datail>

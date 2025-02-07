@@ -1,0 +1,22 @@
+@if (messages) {
+<h2>Messages:</h2>
+
+<button mat-flat-button (click)="clearMessage()" type="button">
+  Clear messages
+</button>
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Messages </mat-panel-title>
+      <mat-panel-description> {{ messages.length }} </mat-panel-description>
+    </mat-expansion-panel-header>
+    
+    @for (message of messages; track $index) {
+      <p>{{ message }}</p>
+      }
+      
+
+  </mat-expansion-panel>
+</mat-accordion>
+}
