@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [CommonModule, FormsModule, MatButtonModule],
   templateUrl: './hero-datail.component.html',
   styleUrl: './hero-datail.component.scss',
+  host: { class: 'class1' },
 })
 export class HeroDatailComponent implements OnInit {
   hero!: Hero;
