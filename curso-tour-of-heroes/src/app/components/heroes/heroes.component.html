@@ -1,10 +1,10 @@
 <h2>My Heroes</h2>
 <ul>
   @for (hero of heroes; track hero.id) {
-  <li [class.selected]="hero === selectedHero" (click)="onSelectHero(hero)">
-    {{ hero.id }} - {{ hero.name }}
-  </li>
+    <li routerLink="/heroes/{{ hero.id }}">
+      {{ hero.id }} - {{ hero.name }}
+    </li>
   }
 </ul>
 
-<app-hero-datail [hero]="selectedHero"></app-hero-datail>
+
