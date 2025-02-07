@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HEROES } from '../../mock-heroes';
 import { HeroDatailComponent } from '../hero-datail/hero-datail.component';
 import { HeroService } from '../../services/hero.service';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -20,6 +21,7 @@ export class HeroesComponent implements OnInit {
 
   constructor(
     private heroService: HeroService,
+    private messaseService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -32,5 +34,8 @@ export class HeroesComponent implements OnInit {
 
   onSelectHero(hero: Hero): void {
     this.selectedHero = hero;
+    this.messaseService.addMessage(
+      `HeroesComponent: Selected hero: ${hero.id} - ${hero.name}`
+    );
   }
 }
