@@ -1,12 +1,27 @@
 import { Routes } from '@angular/router';
-import { HeroesComponent } from './components/heroes/heroes.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HeroDatailComponent } from './components/hero-datail/hero-datail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'heroes', component: HeroesComponent },
-  { path: 'heroes/:id', component: HeroDatailComponent },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./components/dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent
+      ),
+  },
+  {
+    path: 'heroes',
+    loadComponent: () =>
+      import('./components/heroes/heroes.component').then(
+        (m) => m.HeroesComponent
+      ),
+  },
+  {
+    path: 'heroes/:id',
+    loadComponent: () =>
+      import('./components/hero-datail/hero-datail.component').then(
+        (m) => m.HeroDatailComponent
+      ),
+  },
   { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
