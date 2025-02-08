@@ -15,8 +15,7 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
     MessagesComponent,
     MatIconModule,
     RouterModule,
-    MatTooltipModule,
-    DashboardComponent
+    MatTooltipModule
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
