@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../interfaces/Hero.interface';
 import { HEROES } from '../mock-heroes';
-import { Observable, of, tap } from 'rxjs';
+import { delay, Observable, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HeroService {
   baseUrl = environment.baseUrl;
-  apiUrl = `${this.baseUrl}/heroes`;
+  apiUrl = `${this.baseUrl}`;
 
   constructor(
     private messageService: MessageService,
