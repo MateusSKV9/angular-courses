@@ -1,11 +1,23 @@
-<div class="hero-details">
-  <h2>{{ hero.name | uppercase }} Details:</h2>
-  <p>hero: {{ hero.id }} - {{ hero.name }}</p>
-
-  <div>
-    <label for="name">hero name:</label>
-    <input [(ngModel)]="hero.name" type="text" name="name" id="name" />
+@if (hero) {
+  <div class="hero-details">
+    <mat-form-field>
+      <mat-label>ID</mat-label>
+      <input type="number" matInput disabled [value]="hero.id" title="." />
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>ID</mat-label>
+      <input [(ngModel)]="hero.name" type="text" name="name" id="name" matInput />
+    </mat-form-field>
+  
+    <h2>{{ hero.name | uppercase }} Details:</h2>
+    <p>hero: {{ hero.id }} - {{ hero.name }}</p>
+  
+    <div>
+      <label for="name">hero name:</label>
+      <input [(ngModel)]="hero.name" type="text" name="name" id="name" />
+    </div>
+  
+    <button mat-flat-button (click)="goBack()" type="button">Go back</button>
   </div>
-
-  <button mat-flat-button (click)="goBack()" type="button">Go back</button>
-</div>
+}

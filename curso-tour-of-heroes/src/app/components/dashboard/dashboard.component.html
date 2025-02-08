@@ -1,5 +1,5 @@
 @for (hero of heroes; track hero.id) {
-<mat-card routerLink="/heroes/{{ hero.id }}" appearance="outlined">
-  <mat-card-content>{{ hero.name }}</mat-card-content>
+<mat-card [routerLink]="['/heroes/', hero.id]" appearance="outlined">
+  <mat-card-content class="pointer">{{ hero.name }}</mat-card-content>
 </mat-card>
 }
