@@ -5,6 +5,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { LoadingComponent } from "./components/loading/loading.component";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
     MessagesComponent,
     MatIconModule,
     RouterModule,
-    MatTooltipModule
+    MatTooltipModule,
+    LoadingComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

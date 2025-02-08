@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HeroService } from '../../services/hero.service';
 import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
+import { delay, tap } from 'rxjs';
 
 @Component({
   selector: 'app-heroes',
