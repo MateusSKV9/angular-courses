@@ -1,5 +1,13 @@
-@if (this.loadingService.loading$ | async) {
-  <div class="spinner-container">
-    <mat-spinner></mat-spinner>
+@if (loading$ | async) {
+<div class="spinner-container">
+  @if (firstLoadMessage$ | async) {
+  <div>
+    <h2>Aguarde, o carregamento inicial pode demorar um pouco 🙂⌛...</h2>
+    <div class="box"></div>
   </div>
+  } @else {
+  <mat-spinner></mat-spinner>
+  }
+</div>
 }
+

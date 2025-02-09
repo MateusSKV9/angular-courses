@@ -6,13 +6,16 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-loading',
   standalone: true,
-  imports: [MatProgressSpinner, CommonModule],
+  imports: [CommonModule, MatProgressSpinner],
   templateUrl: './loading.component.html',
   styleUrl: './loading.component.scss',
 })
 export class LoadingComponent {
-  constructor(public loadingService: LoadingService){
+  loading$;
+  firstLoadMessage$;
 
+  constructor(private loadingService: LoadingService) {
+    this.loading$ = this.loadingService.loading$;
+    this.firstLoadMessage$ = this.loadingService.firstLoadMessage$;
   }
-
 }

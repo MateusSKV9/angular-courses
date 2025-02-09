@@ -13,23 +13,23 @@ import { Injectable } from '@angular/core';
 export class LoadingInterceptor implements HttpInterceptor {
   constructor(private loadingService: LoadingService) {}
 
-  private activeResquests = 0;
+  private activeRequests = 0;
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    if (this.activeResquests === 0) {
+    if (this.activeRequests === 0) {
       this.loadingService.show();
     }
 
-    this.activeResquests++;
+    this.activeRequests++;
 
     return next.handle(req).pipe(
       finalize(() => {
-        this.activeResquests--;
+        this.activeRequests--;
 
-        if (this.activeResquests === 0) {
+        if (this.activeRequests === 0) {
           this.loadingService.hide();
         }
       })
