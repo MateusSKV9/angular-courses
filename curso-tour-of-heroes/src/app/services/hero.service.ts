@@ -18,13 +18,13 @@ export class HeroService {
     private http: HttpClient
   ) {}
 
-  getHeroes(): Observable<Hero[]> {
+  getAll(): Observable<Hero[]> {
     return this.http
       .get<Hero[]>(`${this.apiUrl}`)
       .pipe(tap((heroes) => this.log(`Fetched ${heroes.length} hero(es)`)));
   }
 
-  getHero(id: number): Observable<Hero> {
+  getOne(id: number): Observable<Hero> {
     return this.http
       .get<Hero>(`${this.apiUrl}/${id}`)
       .pipe(
@@ -36,5 +36,15 @@ export class HeroService {
 
   private log(message: string) {
     this.messageService.addMessage(`HeroService ${message}`);
+  }
+
+  update(hero: Hero): Observable<Hero> {
+    return this.http
+      .put<Hero>(`${this.apiUrl}/${hero.id}`, hero)
+      .pipe(
+        tap((hero) =>
+          this.log(`Updated hero id=${hero.id} and name ${hero.name}`)
+        )
+      );
   }
 }

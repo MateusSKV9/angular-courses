@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class HeroDatailComponent implements OnInit {
   hero!: Hero;
+  isEditing!: boolean;
 
   constructor(
     private heroService: HeroService,
@@ -36,12 +37,28 @@ export class HeroDatailComponent implements OnInit {
   }
 
   getHero(): void {
-    const id = Number(this.activateRoute.snapshot.paramMap.get('id'));
+    const paramId = this.activateRoute.snapshot.paramMap.get('id');
 
-    this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
+    if (paramId === 'new') {
+      this.isEditing = false;
+    } else {
+      this.isEditing = true;
+      const id = Number(paramId);
+      this.heroService.getOne(id).subscribe((hero) => (this.hero = hero));
+    }
   }
 
   goBack(): void {
     this.router.navigate(['/']);
+  }
+
+  save(): void {
+    this.heroService.update(this.hero).subscribe(() => {
+      this.goBack();
+    });
+  }
+
+  isFormValid(): boolean {
+    return !!this.hero.name.trim();
   }
 }
