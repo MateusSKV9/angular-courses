@@ -5,12 +5,20 @@ import { FormsModule } from '@angular/forms';
 import { HeroService } from '../../services/hero.service';
 import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
-import { delay, tap } from 'rxjs';
+import { MatIcon } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, MatTableModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    MatTableModule,
+    MatIcon,
+    MatButtonModule,
+  ],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.scss',
   host: { class: 'class1' },

@@ -1,11 +1,10 @@
 <h2>My Heroes</h2>
 <ul>
   @for (hero of heroes; track hero.id) {
-    <li [routerLink]="['/heroes/', hero.id]">
-      {{ hero.id }} - {{ hero.name }}
-    </li>
+  <li [routerLink]="['/heroes/', hero.id]">{{ hero.id }} - {{ hero.name }}</li>
   }
 </ul>
 
-
-
+<button routerLink="new" class="add-button" mat-raised-button type="button">
+  <mat-icon>add</mat-icon>
+</button>

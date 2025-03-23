@@ -7,6 +7,7 @@ import { HeroService } from '../../services/hero.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-hero-datail',
@@ -41,6 +42,7 @@ export class HeroDatailComponent implements OnInit {
 
     if (paramId === 'new') {
       this.isEditing = false;
+      this.hero = { name: '' } as Hero;
     } else {
       this.isEditing = true;
       const id = Number(paramId);
@@ -49,10 +51,16 @@ export class HeroDatailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/heroes']);
   }
 
-  save(): void {
+  create(): void {
+    this.heroService.create(this.hero).subscribe(() => {
+      this.goBack();
+    });
+  }
+
+  update(): void {
     this.heroService.update(this.hero).subscribe(() => {
       this.goBack();
     });
