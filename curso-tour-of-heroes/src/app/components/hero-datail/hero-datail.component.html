@@ -1,42 +1,45 @@
 <h1>{{ isEditing ? "Update" : "Create" }} Hero</h1>
+<form [formGroup]="form" novalidate>
+  <div class="hero-details">
+    <mat-form-field *ngIf="isEditing">
+      <mat-label>ID</mat-label>
+      <input
+        formControlName="id"
+        type="number"
+        matInput
+        [value]="hero.id"
+        title="."
+      />
+    </mat-form-field>
 
-<div class="hero-details">
-  <mat-form-field *ngIf="isEditing">
-    <mat-label>ID</mat-label>
-    <input type="number" matInput disabled [value]="hero.id" title="." />
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Hero name</mat-label>
+      <input
+        formControlName="name"
+        type="text"
+        name="name"
+        id="name"
+        matInput
+        title="Hero name"
+      />
 
-  <mat-form-field>
-    <mat-label>Hero name</mat-label>
-    <input
-      [(ngModel)]="hero.name"
-      type="text"
-      name="name"
-      id="name"
-      matInput
-      title="Hero name"
-    />
-  </mat-form-field>
+      <mat-error *ngIf="form.get('name')?.hasError('required')"
+        >Name is required.</mat-error
+      >
 
-  <button
-    *ngIf="!isEditing"
-    mat-flat-button
-    (click)="create()"
-    type="button"
-    [disabled]="!isFormValid()"
-  >
-    Create
-  </button>
+      <mat-error *ngIf="form.get('name')?.hasError('minlength')"
+        >At least 2 characters.</mat-error
+      >
+    </mat-form-field>
 
-  <button
-    *ngIf="isEditing"
-    mat-flat-button
-    (click)="update()"
-    type="button"
-    [disabled]="!isFormValid()"
-  >
-    Update
-  </button>
+    <button *ngIf="!isEditing" mat-flat-button (click)="create()" type="button">
+      Create
+    </button>
 
-  <button mat-flat-button (click)="goBack()" type="button">Go back</button>
-</div>
+    <button *ngIf="isEditing" mat-flat-button (click)="update()" type="button">
+      Update
+    </button>
+
+    <button mat-flat-button (click)="goBack()" type="button">Go back</button>
+  </div>
+</form>
