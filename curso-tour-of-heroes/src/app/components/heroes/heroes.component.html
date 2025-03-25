@@ -1,9 +1,25 @@
 <h2>My Heroes</h2>
-<ul>
-  @for (hero of heroes; track hero.id) {
-  <li [routerLink]="['/heroes/', hero.id]">{{ hero.id }} - {{ hero.name }}</li>
-  }
-</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (hero of heroes; track hero.id) {
+    <tr [routerLink]="['/heroes/', hero.id]">
+      <td>{{ hero.id }}</td>
+      <td>{{ hero.name }}</td>
+      <td (click)="delete(hero); $event.stopPropagation()">
+        <i class="fa-solid fa-trash-can"></i>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
 
 <button routerLink="new" class="add-button" mat-raised-button type="button">
   <mat-icon>add</mat-icon>

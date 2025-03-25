@@ -65,3 +65,51 @@ mat-icon {
   font-weight: bold;
   font-size: 1.4em;
 }
+
+table {
+  background-color: rgb(246, 246, 246);
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 400px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+}
+
+thead tr {
+  background-color: #059fff;
+  color: white;
+}
+
+thead th:first-of-type {
+  border-radius: 5px 0px 0px 0px;
+}
+thead th:last-of-type {
+  border-radius: 0px 5px 0px 0px;
+}
+tbody tr:last-of-type td:first-of-type {
+  border-radius: 0px 0px 0px 5px;
+}
+tbody tr:last-of-type td:last-of-type {
+  border-radius: 0px 0px 5px 0px;
+}
+
+th {
+  font-weight: 500;
+}
+
+tbody tr:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+tr i:hover {
+  color: rgb(255, 0, 128);
+}
+
+td,
+th {
+  padding: 7px 10px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
