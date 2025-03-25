@@ -3,13 +3,7 @@
   <div class="hero-details">
     <mat-form-field *ngIf="isEditing">
       <mat-label>ID</mat-label>
-      <input
-        formControlName="id"
-        type="number"
-        matInput
-        [value]="hero.id"
-        title="."
-      />
+      <input formControlName="id" type="number" matInput title="." />
     </mat-form-field>
 
     <mat-form-field>
